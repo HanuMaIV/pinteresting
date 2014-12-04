@@ -1,4 +1,14 @@
 <div class='jumbotron'>
 	<h1>About US</h1>
-	<p>Someone please get Omri!!</p>
+	<% if user_signed_in? %>
+		<div class='center'>
+			'<img src='http://i1015.photobucket.com/albums/af276/Brendan_Miranda/HotChocolate_zpsedec6da5.jpg' alt='sweet hot chocolate' />
+		<p>Little Bear thanks you!! Let us enjoy some sweet hot chocolate now.</p>
+		</div>
+	<% else %>
+	<div class='center'>
+		<img src='http://i1015.photobucket.com/albums/af276/Brendan_Miranda/omri_zps967cf388.jpg' alt='omri' />
+		<p>Someone please get Omri!!</p>
+	</div>
+	<% end %>
 </div>
