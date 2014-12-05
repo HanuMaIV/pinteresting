@@ -25,7 +25,7 @@ class PinsController < ApplicationController
   def create
     @pin = current_user.pins.build(pin_params)
     @pin.save
-    respond_with(@pin)
+    redirect_to @pin, notice: 'Pin was successfully created.'
   end
 
   def update
@@ -44,7 +44,8 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
+
     end
 
     def correct_user
